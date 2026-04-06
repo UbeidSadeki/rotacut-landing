@@ -1,0 +1,206 @@
+---
+import { baseUrl } from "../utils/constants";
+---
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button
+    class="mobile-close"
+    onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button
+  >
+  <a href="#products" onclick="document.getElementById('mobileMenu').classList.remove('open')">Products</a>
+  <a href="#why" onclick="document.getElementById('mobileMenu').classList.remove('open')">Why Rotacut</a>
+  <a href="#materials" onclick="document.getElementById('mobileMenu').classList.remove('open')">Materials</a>
+  <a href="#industries" onclick="document.getElementById('mobileMenu').classList.remove('open')">Industries</a>
+  <a href="#dealer" onclick="document.getElementById('mobileMenu').classList.remove('open')">Become a Dealer</a>
+  <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')" style="color:var(--red);">Get a Quote</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href={baseUrl} class="nav-logo">
+    <img src={`${baseUrl}/logo.png`} alt="Rotacut" style="height:2rem;" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Why Rotacut</a></li>
+    <li><a href="#materials">Materials</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#dealer">Become a Dealer</a></li>
+  </ul>
+  <div class="nav-cta-wrap">
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </div>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition:
+      background 0.4s ease,
+      padding 0.4s ease,
+      backdrop-filter 0.4s;
+  }
+
+  nav.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 1rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--red);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+  }
+
+  .nav-cta-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-cta {
+    background: var(--red);
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background 0.2s,
+      box-shadow 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--red-dark);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.4);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 10, 0.98);
+    z-index: 101;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1.25rem 1.5rem;
+    }
+
+    nav.scrolled {
+      padding: 0.875rem 1.5rem;
+    }
+
+    .nav-links,
+    .nav-cta-wrap {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const hero = document.querySelector(".hero");
+  const observer = new IntersectionObserver(
+    ([entry]) => navbar?.classList.toggle("scrolled", !entry.isIntersecting),
+    { threshold: 0.1 },
+  );
+  if (hero) {
+    observer.observe(hero);
+  }
+</script>

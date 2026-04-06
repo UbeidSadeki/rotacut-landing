@@ -1,0 +1,249 @@
+---
+interface Props {
+  imgSrc: string;
+  imgAlt: string;
+  type: string;
+  name: string;
+  description: string;
+  specs: string[];
+  href?: string;
+}
+
+const { imgSrc, imgAlt, type, name, description, specs, href = "#contact" } = Astro.props;
+---
+
+<div class="product-card" data-img-src={imgSrc} data-img-alt={imgAlt}>
+  <div class="product-img-wrap">
+    <img src={imgSrc} alt={imgAlt} class="product-img" loading="lazy" />
+  </div>
+  <div class="product-type">{type}</div>
+  <h3 class="product-name">{name}</h3>
+  <p class="product-desc">{description}</p>
+  <div class="product-specs">
+    {specs.map((spec) => <span class="spec-tag">{spec}</span>)}
+  </div>
+  <a href={href} class="product-link">View Range →</a>
+</div>
+
+<div class="img-lightbox" aria-hidden="true" style="display:none;">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" class="lightbox-img" />
+</div>
+
+<style>
+  .product-card {
+    background: var(--bg2);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    background: var(--bg3);
+  }
+
+  .product-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .product-card:hover .product-img {
+    transform: scale(1.05);
+  }
+
+  .product-img-wrap {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+  }
+
+  .product-type {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin: 0 0 0.75rem;
+  }
+
+  .product-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .product-specs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: auto;
+  }
+
+  .spec-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.6rem;
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+
+  .product-link:hover {
+    gap: 0.8rem;
+  }
+
+  .img-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+  }
+
+  .img-lightbox.open {
+    display: flex;
+    animation: fade-in 0.25s ease;
+  }
+
+  .lightbox-img {
+    max-width: min(80vw, 700px);
+    max-height: 80vh;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.8));
+    animation: zoom-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoom-in {
+    from {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".product-card").forEach((card) => {
+    const lightbox = card.nextElementSibling as HTMLElement;
+    const lightboxImg = lightbox.querySelector<HTMLImageElement>(".lightbox-img")!;
+    const closeBtn = lightbox.querySelector<HTMLButtonElement>(".lightbox-close")!;
+
+    function open() {
+      lightboxImg.src = card.dataset.imgSrc!;
+      lightboxImg.alt = card.dataset.imgAlt!;
+      lightbox.classList.add("open");
+      lightbox.style.display = "flex";
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function close() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightbox.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    card.addEventListener("click", (e) => {
+      if ((e.target as HTMLElement).closest("a")) return;
+      open();
+    });
+
+    closeBtn.addEventListener("click", close);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) close();
+    });
+  });
+</script>

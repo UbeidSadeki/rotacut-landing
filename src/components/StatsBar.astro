@@ -1,0 +1,61 @@
+---
+---
+
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-divider">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">SKUs Available</div>
+      </div>
+      <div class="stat-divider">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years of Expertise</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .stats-bar {
+    background: var(--red);
+    padding: 3.5rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .stat-divider {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .stat-divider:last-child {
+    border: none;
+  }
+
+  .stat-num {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3.5rem;
+    color: #fff;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

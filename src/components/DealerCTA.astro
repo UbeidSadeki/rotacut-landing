@@ -1,0 +1,192 @@
+---
+import Mail from "@lucide/astro/icons/mail";
+import Globe from "@lucide/astro/icons/globe";
+---
+
+<section id="dealer" class="dealer-section">
+  <div class="dealer-grid">
+    <div class="dealer-half">
+      <div class="dealer-label">Find a Dealer</div>
+      <h3 class="dealer-title">Get Rotacut Near You</h3>
+      <p class="dealer-text">
+        Our authorised dealer network spans 30+ countries. Contact us to find your nearest Rotacut
+        stockist or request a direct quote for your project.
+      </p>
+      <a href="#contact" class="btn-primary">Find a Dealer</a>
+      <div class="contact-info">
+        <p class="contact-info-label">Quick Contact</p>
+        <p class="contact-info-row">
+          <Mail size={14} />{" "}info@rotacut.com
+        </p>
+        <p class="contact-info-row">
+          <Globe size={14} />{" "}www.rotacut.com
+        </p>
+      </div>
+    </div>
+    <div class="dealer-half dealer-half--alt" id="contact">
+      <div class="dealer-label">Become a Dealer</div>
+      <h3 class="dealer-title">Join Our Network</h3>
+      <p class="dealer-text">
+        Interested in carrying Rotacut products? Fill out the form below and our team will get back
+        to you within 24 hours.
+      </p>
+      <form class="dealer-form" onsubmit="return false;">
+        <div class="form-row">
+          <input class="form-input" type="text" placeholder="Your Name" />
+          <input class="form-input" type="text" placeholder="Company Name" />
+        </div>
+        <div class="form-row">
+          <input class="form-input" type="email" placeholder="Email Address" />
+          <input class="form-input" type="tel" placeholder="Phone Number" />
+        </div>
+        <select class="form-input form-select">
+          <option value="" disabled selected>Product Interest</option>
+          <option>TCT Annular Cutters</option>
+          <option>TCT Rail Cutters</option>
+          <option>HSS Annular Cutters</option>
+          <option>Pilot Pins</option>
+          <option>Full Range</option>
+        </select>
+        <textarea
+          class="form-input"
+          rows="3"
+          placeholder="Message / Project Details"
+          style="resize:vertical;"></textarea>
+        <button type="submit" class="btn-primary btn-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dealer-section {
+    padding: 0;
+  }
+
+  .dealer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .dealer-half {
+    padding: 4rem;
+    background: var(--bg2);
+  }
+
+  .dealer-half--alt {
+    background: var(--bg3);
+  }
+
+  .dealer-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .dealer-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 0.03em;
+    color: #fff;
+    margin: 0 0 1rem;
+    line-height: 1;
+  }
+
+  .dealer-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .contact-info {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-info-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .contact-info-row {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+  }
+
+  .dealer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: #fff;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    font-family: "Barlow", sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input:focus {
+    border-color: var(--red);
+  }
+
+  .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  .form-select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+
+  .btn-submit {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .dealer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dealer-half {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

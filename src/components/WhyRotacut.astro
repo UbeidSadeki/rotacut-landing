@@ -1,0 +1,132 @@
+---
+---
+
+<section id="why" class="why-section">
+  <div class="divider"></div>
+  <div style="height:7rem;"></div>
+  <div class="container">
+    <div class="section-label"><span>Why Rotacut</span></div>
+    <h2 class="section-title">Engineering That Sets Us Apart</h2>
+    <p class="section-sub">
+      Every Rotacut cutter is built on six engineering principles that ensure maximum performance on
+      every cut.
+    </p>
+  </div>
+  <div class="usp-grid">
+    <div class="usp-item">
+      <div class="usp-number">01</div>
+      <div class="usp-title">Sandvik Carbide Tips</div>
+      <p class="usp-text">
+        Extremely hard and durable tungsten carbide cutting teeth sourced from Sandvik — the world's
+        leading carbide manufacturer — for the hardest drilling tasks.
+      </p>
+    </div>
+    <div class="usp-item">
+      <div class="usp-number">02</div>
+      <div class="usp-title">Optimised Cutting Geometry</div>
+      <p class="usp-text">
+        Offset tooth positioning and continuous pre-cut design delivers the lowest heat development
+        and burr-free finishes on every hole.
+      </p>
+    </div>
+    <div class="usp-item">
+      <div class="usp-number">03</div>
+      <div class="usp-title">Precision Ground Shanks</div>
+      <p class="usp-text">
+        Weldon 19.05mm and Universal 31.75mm shank options with close-tolerance fitment for zero
+        run-out and maximum concentricity.
+      </p>
+    </div>
+    <div class="usp-item">
+      <div class="usp-number">04</div>
+      <div class="usp-title">Optimal Chip Removal</div>
+      <p class="usp-text">
+        Engineered spiral flute angles designed for maximum chip evacuation efficiency — keeping the
+        cut clean, cool, and consistent.
+      </p>
+    </div>
+    <div class="usp-item">
+      <div class="usp-number">05</div>
+      <div class="usp-title">Stability &amp; Durability</div>
+      <p class="usp-text">
+        Special alloy body with tapered inside fitment prevents the cutter from getting stuck —
+        protecting both the cutter and your magnetic drill.
+      </p>
+    </div>
+    <div class="usp-item">
+      <div class="usp-number">06</div>
+      <div class="usp-title">Complete Size Range</div>
+      <p class="usp-text">
+        Diameters from 11mm to 65mm, cutting depths from 25mm to 100mm. Custom sizes available on
+        request for OEM and special applications.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-section {
+    background: var(--bg2);
+    padding-top: 0;
+  }
+
+  .usp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .usp-item {
+    background: var(--bg2);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .usp-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--red);
+    transition: height 0.4s ease;
+  }
+
+  .usp-item:hover::after {
+    height: 100%;
+  }
+
+  .usp-number {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 4rem;
+    color: rgba(204, 0, 0, 0.1);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .usp-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .usp-text {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .usp-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

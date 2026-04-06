@@ -1,0 +1,158 @@
+---
+---
+
+<section id="materials">
+  <div class="container">
+    <div class="section-label"><span>Material Compatibility</span></div>
+    <h2 class="section-title">Which Cutter for Your Material?</h2>
+    <p class="section-sub">
+      Use this guide to find the right Rotacut cutter for your workpiece material. ● Optimal
+      &nbsp;◐ Good &nbsp;○ Possible
+    </p>
+    <div class="table-scroll">
+      <table class="material-table">
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>TCT Annular</th>
+            <th>TCT Rail</th>
+            <th>HSS Annular</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plastics</td>
+            <td><span class="rating rating-good">◐</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-optimal">●</span></td>
+          </tr>
+          <tr>
+            <td>Brass / Copper / Tin</td>
+            <td><span class="rating rating-good">◐</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-optimal">●</span></td>
+          </tr>
+          <tr>
+            <td>Grey Cast Iron</td>
+            <td><span class="rating rating-optimal">●</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-good">◐</span></td>
+          </tr>
+          <tr>
+            <td>Mild Steel (≤500 N/mm²)</td>
+            <td><span class="rating rating-optimal">●</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-optimal">●</span></td>
+          </tr>
+          <tr>
+            <td>High Tensile Steel (≤800 N/mm²)</td>
+            <td><span class="rating rating-optimal">●</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-possible">○</span></td>
+          </tr>
+          <tr>
+            <td>Stainless Steel</td>
+            <td><span class="rating rating-optimal">●</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-none">—</span></td>
+          </tr>
+          <tr>
+            <td>Aluminium</td>
+            <td><span class="rating rating-optimal">●</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-good">◐</span></td>
+          </tr>
+          <tr>
+            <td>Exotic Materials (Inconel, HARDOX)</td>
+            <td><span class="rating rating-optimal">●</span></td>
+            <td><span class="rating rating-none">—</span></td>
+            <td><span class="rating rating-none">—</span></td>
+          </tr>
+          <tr>
+            <td>Railway Rails</td>
+            <td><span class="rating rating-good">◐</span></td>
+            <td><span class="rating rating-optimal">●</span></td>
+            <td><span class="rating rating-none">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .table-scroll {
+    overflow-x: auto;
+  }
+
+  .material-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .material-table th {
+    padding: 1rem 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .material-table th:not(:first-child) {
+    text-align: center;
+  }
+
+  .material-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: background 0.2s;
+  }
+
+  .material-table td:not(:first-child) {
+    text-align: center;
+  }
+
+  .material-table tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .rating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  .rating-optimal {
+    background: rgba(204, 0, 0, 0.2);
+    color: var(--red);
+    border: 1px solid rgba(204, 0, 0, 0.4);
+  }
+
+  .rating-good {
+    background: rgba(245, 124, 0, 0.15);
+    color: var(--orange);
+    border: 1px solid rgba(245, 124, 0, 0.3);
+  }
+
+  .rating-possible {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .rating-none {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 1rem;
+  }
+</style>

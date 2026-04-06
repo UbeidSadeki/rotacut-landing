@@ -1,0 +1,193 @@
+---
+import { baseUrl } from "../utils/constants";
+const heroBg = `url('${baseUrl}/products/all-in-one.png')`;
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bottom-fade"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Precision-Engineered Annular Cutters</span>
+    </div>
+    <h1 class="hero-headline">
+      Built to<br />
+      <em>Perform.</em>
+      Engineered<br />to Last.
+    </h1>
+    <p class="hero-sub">
+      Tungsten Carbide Tipped &amp; High Speed Steel cutters, trusted by professionals worldwide.
+      Sandvik carbide tips for the hardest drilling tasks.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">View Our Products</a>
+      <a href="#dealer" class="btn-secondary">Become a Dealer</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">200<span>+</span></div>
+        <div class="hero-stat-label">SKUs Available</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">11-150<span>mm</span></div>
+        <div class="hero-stat-label">Diameter Range</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">10<span>+</span></div>
+        <div class="hero-stat-label">Years Expertise</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style define:vars={{ heroBg }}>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--heroBg) center/cover no-repeat;
+  }
+
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(10, 10, 10, 0.92) 0%,
+      rgba(10, 10, 10, 0.75) 45%,
+      rgba(10, 10, 10, 0.3) 100%
+    );
+  }
+
+  .hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(transparent, var(--bg));
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 3rem;
+    padding-top: 4rem;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+
+  .hero-eyebrow::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--red);
+  }
+
+  .hero-eyebrow span {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 600;
+  }
+
+  .hero-headline {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(4rem, 10vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin: 0 0 1.5rem;
+  }
+
+  .hero-headline em {
+    font-style: normal;
+    color: var(--red);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    justify-content: center;
+  }
+
+  .hero-stat-num {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .hero-stat-num span {
+    color: var(--red);
+  }
+
+  .hero-stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-sub {
+      font-size: 0.85rem;
+    }
+
+    .hero-eyebrow::before {
+      display: none;
+    }
+
+    .hero-content {
+      padding: 0 1.5rem;
+      padding-top: 3rem;
+    }
+
+    .hero-stats {
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+  }
+</style>

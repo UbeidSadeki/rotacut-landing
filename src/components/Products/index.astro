@@ -1,0 +1,78 @@
+---
+import { baseUrl } from "../../utils/constants";
+import ProductCard from "./ProductCard.astro";
+
+const products = [
+  {
+    imgSrc: `${baseUrl}/products/22x75.png`,
+    imgAlt: "TCT Annular Cutter",
+    type: "Tungsten Carbide Tipped",
+    name: "TCT Annular Cutters",
+    description:
+      "Engineered with Sandvik carbide tips for steel, stainless steel, aluminium, and exotic materials. Maximum productivity with minimum heat.",
+    specs: ["Ø 11-150mm", "DoC 35-100mm", "Weldon Shank/Universal Shank"],
+  },
+  {
+    imgSrc: `${baseUrl}/products/22x35.png`,
+    imgAlt: "Rail Annular Cutter",
+    type: "Rail Series",
+    name: "TCT Rail Cutters",
+    description:
+      "Purpose-built for rail drilling applications. Optimised geometry for the demanding requirements of railway and infrastructure work.",
+    specs: ["Ø 12-36mm", "DoC 25-50mm", "Rail Grade"],
+  },
+  {
+    imgSrc: `${baseUrl}/products/24x25.png`,
+    imgAlt: "HSS Annular Cutter",
+    type: "High Speed Steel",
+    name: "HSS Annular Cutters",
+    description:
+      "High Speed Steel construction for plastics, brass, grey cast iron, and mild steel. Versatile performance across a wide range of materials.",
+    specs: ["Ø 12-60mm", "DoC 30-100mm", "Weldon Shank/Universal Shank"],
+  },
+  {
+    imgSrc: `${baseUrl}/products/pilot-pins.png`,
+    imgAlt: "Pilot Pins",
+    type: "Accessories",
+    name: "Pilot Pins",
+    description:
+      "Essential accessories for cutter centration, lubrication flow, and slug ejection. Matched precisely to cutter diameter and depth.",
+    specs: ["Full Range", "All Shanks", "Precision Ground"],
+  },
+];
+---
+
+<section id="products">
+  <div class="container">
+    <div class="section-label"><span>Product Range</span></div>
+    <h2 class="section-title">Our Cutting Solutions</h2>
+    <p class="section-sub">
+      Engineered for every application — from structural steel to exotic alloys, rail track to
+      aluminium.
+    </p>
+  </div>
+  <div class="products-grid">
+    {products.map((product) => <ProductCard {...product} />)}
+  </div>
+</section>
+
+<style>
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  @media (max-width: 1024px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
