@@ -1,6 +1,7 @@
 ---
 import Mail from "@lucide/astro/icons/mail";
 import Globe from "@lucide/astro/icons/globe";
+import { Phone } from "@lucide/astro";
 ---
 
 <section id="dealer" class="dealer-section">
@@ -21,6 +22,38 @@ import Globe from "@lucide/astro/icons/globe";
         <p class="contact-info-row">
           <Globe size={14} />{" "}www.rotacut.com
         </p>
+        <a
+          href="tel:+917405474010"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-info-row"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line
+              x1="12"
+              y1="18"
+              x2="12.01"
+              y2="18"></line></svg
+          >
+          + 91 74054 74010
+        </a>
+        <a
+          href="tel:02882551920"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-info-row"
+        >
+          <Phone size={14} />{" "}0288-2551920
+        </a>
       </div>
     </div>
     <div class="dealer-half dealer-half--alt" id="contact">
@@ -120,6 +153,7 @@ import Globe from "@lucide/astro/icons/globe";
   }
 
   .contact-info-row {
+    text-decoration: none;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
@@ -127,6 +161,10 @@ import Globe from "@lucide/astro/icons/globe";
     align-items: center;
     gap: 0.4rem;
     margin-top: 0.3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-block: 1rem;
   }
 
   .dealer-form {
