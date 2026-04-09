@@ -5,6 +5,7 @@
 }
 
 :root {
+  color-scheme: dark;
   --red: #cc0000;
   --red-dark: #990000;
   --orange: #f57c00;
