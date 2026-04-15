@@ -8,19 +8,31 @@ import { baseUrl } from "../utils/constants";
     class="mobile-close"
     onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button
   >
-  <a href="#products" onclick="document.getElementById('mobileMenu').classList.remove('open')">Products</a>
-  <a href="#why" onclick="document.getElementById('mobileMenu').classList.remove('open')">Why Rotacut</a>
-  <a href="#materials" onclick="document.getElementById('mobileMenu').classList.remove('open')">Materials</a>
-  <a href="#industries" onclick="document.getElementById('mobileMenu').classList.remove('open')">Industries</a>
-  <a href="#dealer" onclick="document.getElementById('mobileMenu').classList.remove('open')">Become a Dealer</a>
-  <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')" style="color:var(--red);">Get a Quote</a>
+  <a href="#products" onclick="document.getElementById('mobileMenu').classList.remove('open')"
+    >Products</a
+  >
+  <a href="#why" onclick="document.getElementById('mobileMenu').classList.remove('open')"
+    >Why Rotacut</a
+  >
+  <a href="#materials" onclick="document.getElementById('mobileMenu').classList.remove('open')"
+    >Materials</a
+  >
+  <a href="#industries" onclick="document.getElementById('mobileMenu').classList.remove('open')"
+    >Industries</a
+  >
+  <a href="#dealer" onclick="document.getElementById('mobileMenu').classList.remove('open')"
+    >Become a Dealer</a
+  >
+  <a
+    href="#contact"
+    onclick="document.getElementById('mobileMenu').classList.remove('open')"
+    style="color:var(--red);">Get a Quote</a
+  >
 </div>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href={baseUrl} class="nav-logo">
-    <img src={`${baseUrl}/logo.png`} alt="Rotacut" style="height:2rem;" />
-  </a>
+  <a href={baseUrl} class="nav-logo">Rotacut<sup style="color:var(--red);">™</sup></a>
   <ul class="nav-links">
     <li><a href="#products">Products</a></li>
     <li><a href="#why">Why Rotacut</a></li>
