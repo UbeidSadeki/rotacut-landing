@@ -16,6 +16,7 @@ import DealerForm from "./DealerForm.astro";
       </p>
       <a href="#contact" class="btn-primary">Find a Dealer</a>
       <div class="contact-info">
+        <p class="contact-info-row-company-label">Rotacut Tools Pvt Ltd.</p>
         <p class="contact-info-label">Quick Contact</p>
         <p class="contact-info-row">
           <Mail size={14} />{" "}info@rotacut.com
@@ -72,6 +73,11 @@ import DealerForm from "./DealerForm.astro";
 <style>
   .dealer-section {
     padding: 0;
+  }
+
+  .dealer-section .btn-primary {
+    display: block;
+    width: fit-content;
   }
 
   .dealer-grid {
@@ -143,6 +149,10 @@ import DealerForm from "./DealerForm.astro";
     justify-content: flex-start;
     align-items: center;
     margin-block: 1rem;
+  }
+  .contact-info-row-company-label {
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 
   @media (max-width: 768px) {

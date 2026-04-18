@@ -32,7 +32,9 @@ import { baseUrl } from "../utils/constants";
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href={baseUrl} class="nav-logo">Rotacut<sup style="color:var(--red);">™</sup></a>
+  <a href={baseUrl} class="nav-logo">
+    <img src={`${baseUrl}/logo.png`} alt="Rotacut" style="height:2.5rem;" />
+  </a>
   <ul class="nav-links">
     <li><a href="#products">Products</a></li>
     <li><a href="#why">Why Rotacut</a></li>
